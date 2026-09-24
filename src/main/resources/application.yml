@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: api-guardians-log-monitoring-agent
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY:unused-in-mock-mode}
+      chat:
+        options:
+          model: ${OPENAI_MODEL:gpt-4.1-mini}
+    model:
+      chat: ${SPRING_AI_CHAT_MODEL:none}
+
+log-agent:
+  source: ${LOG_SOURCE:mock}
+  llm-enabled: ${LOG_AGENT_LLM_ENABLED:false}
+
+server:
+  port: ${PORT:8080}
